@@ -361,7 +361,7 @@ weather_features = [
 
 ## Chapter 8: Anomaly Detection in Heating Systems
 
-Anomaly detection identifies equipment faults, control errors, and efficiency degradation. Green Fusion's platform uses this for automated alerting and proactive maintenance.
+Anomaly detection identifies equipment faults, control errors, and efficiency degradation. A modern optimization platform uses this for automated alerting and proactive maintenance.
 
 ### 8.1 Statistical Methods
 
@@ -472,7 +472,7 @@ def detect_legionella_risk(df, temp_col='zirkulation_temp',
     return rolling_count >= duration_hours
 ```
 
-Green Fusion data showed 10% of systems with this risk condition.
+Industry data showed 10% of systems with this risk condition.
 
 **Excessive cycling (Taktverhalten):**
 

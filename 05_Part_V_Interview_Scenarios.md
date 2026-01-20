@@ -1,10 +1,10 @@
-# Part V: Interview Preparation - Applied Scenarios
+# Part V: Applied Scenarios
 
 ---
 
 ## Chapter 18: Case Study Walkthroughs
 
-This chapter analyzes real Green Fusion case studies, demonstrating how to translate business problems into data science solutions. These examples prepare you for technical discussions about production optimization systems.
+This chapter analyzes real-world case studies demonstrating how to translate business problems into data science solutions. These examples illustrate production optimization system development patterns.
 
 ### 18.1 District Heating Optimization: WSL Leipzig
 
@@ -21,7 +21,7 @@ High energy consumption relative to building characteristics, no visibility into
 The first step required establishing data infrastructure where none existed:
 
 ```python
-# Data sources integrated via GreenBox gateway
+# Data sources integrated via IoT gateway
 data_schema = {
     'primary_sensors': {
         'vorlauf_temp': 'Anlegefühler on supply pipe (°C)',
@@ -36,7 +36,7 @@ data_schema = {
         'weather_forecast': 'DWD API (temperature, wind, radiation)',
     },
     'sampling_rate': '15 minutes',
-    'transmission': 'Vodafone API to Green Fusion Cloud'
+    'transmission': 'Vodafone API to Cloud Platform'
 }
 ```
 
@@ -435,7 +435,7 @@ digitalization_strategy = {
         'temperature_monitoring': 'Anlegefühler (clamp-on sensors) on pipes',
         'boiler_status': 'Current transformers on burner power supply',
         'gas_consumption': 'Pulse output from gas meter (retrofit)',
-        'integration': 'GreenBox gateway aggregating all signals'
+        'integration': 'IoT gateway aggregating all signals'
     },
     'data_points_added': 24,
     'installation_time_hours': 6,

@@ -1,6 +1,8 @@
-# Senior Data Scientist Study Guide: Energy Tech & Heating Optimization
+# Data Science for Residential Energy Systems
 
-## Green Fusion GmbH - Interview Preparation
+## Comprehensive Study Guide
+
+A technical reference for data scientists and engineers working on residential heating system optimization, with emphasis on German standards and ML applications.
 
 ---
 
@@ -115,19 +117,19 @@
 
 ---
 
-### Part V: Interview Preparation - Applied Scenarios
+### Part V: Applied Scenarios
 
 **Chapter 18: Case Study Walkthroughs**
-- District heating optimization (WSL Leipzig)
-- Heat pump cascade (GWU Eckernförde)
-- Gas boiler cascade (DIE EHRENFELDER)
+- District heating optimization
+- Heat pump cascade systems
+- Gas boiler cascade with legacy integration
 
-**Chapter 19: System Design Questions**
-- Energy management platform for 3,000 buildings
+**Chapter 19: System Design Exercises**
+- Energy management platform for large building portfolios
 - Real-time anomaly detection pipeline
 - Multi-tenant data architecture
 
-**Chapter 20: Behavioral & Cross-Functional Collaboration**
+**Chapter 20: Cross-Functional Collaboration**
 - Working with energy engineers
 - Translating customer requirements to technical specifications
 - Communicating ML results to non-technical stakeholders
@@ -137,9 +139,10 @@
 ### References
 
 - Academic sources and textbooks
-- German regulations (GEG, EnSimiMaV)
+- German regulations (GEG, DIN, VDI)
 - Industry standards and further reading
+- German-English technical glossary
 
 ---
 
-*Document prepared for Senior Data Scientist interview at Green Fusion GmbH, Berlin*
+*Open educational resource for the energy transition*

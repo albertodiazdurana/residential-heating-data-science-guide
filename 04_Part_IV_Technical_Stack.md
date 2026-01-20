@@ -1092,7 +1092,7 @@ from datetime import datetime, timedelta
 from enum import Enum
 
 app = FastAPI(
-    title="Green Fusion Energy Optimization API",
+    title="Energy Optimization API",
     version="1.0.0",
     description="API for heating system optimization and monitoring"
 )

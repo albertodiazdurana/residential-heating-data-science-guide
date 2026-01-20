@@ -72,10 +72,9 @@
 
 ## Industry Resources
 
-### Green Fusion Publications
-- "Die Dekarbonisierung der Wohnungswirtschaft in Zahlen" - Joint publication with Ampeers Energy analyzing 800 heating systems
-- Case studies available at: https://www.green-fusion.de/case-studies/
-- Technical blog posts: https://www.green-fusion.de/blog/
+### Industry Publications
+- "Die Dekarbonisierung der Wohnungswirtschaft in Zahlen" - Analysis of 800+ heating systems in German residential sector
+- Various case studies from heating optimization companies demonstrate typical savings of 10-20%
 
 ### German Housing Industry
 - GdW Bundesverband deutscher Wohnungs- und Immobilienunternehmen: https://www.gdw.de/
@@ -159,6 +158,6 @@
 
 ---
 
-*Document prepared for Senior Data Scientist interview at Green Fusion GmbH, Berlin*
+*Open educational resource for the energy transition*
 
-*Last updated: January 2025*
+*Last updated: January 2026*

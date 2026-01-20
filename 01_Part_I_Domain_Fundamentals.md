@@ -42,7 +42,7 @@ $$\tau = \frac{C_{thermal}}{UA_{total}}$$
 
 Where C_thermal is the building's heat capacity (J/K) and UA_total is the total heat loss coefficient (W/K). Heavy masonry buildings common in German housing stock may have time constants of 20-50 hours, meaning temperature changes propagate slowly.
 
-This inertia has practical implications for Green Fusion's optimization strategies. A building with high thermal mass can be "pre-heated" during periods of cheap electricity (for heat pumps) or high PV production, storing thermal energy for later use. The system can coast through peak demand periods without active heating, enabling peak shaving strategies that reduce Anschlussleistung costs in district heating systems.
+This inertia has practical implications for Modern heating optimization platform optimization strategies. A building with high thermal mass can be "pre-heated" during periods of cheap electricity (for heat pumps) or high PV production, storing thermal energy for later use. The system can coast through peak demand periods without active heating, enabling peak shaving strategies that reduce Anschlussleistung costs in district heating systems.
 
 ### 1.3 Degree-Day Calculations and Heating Load Estimation
 
@@ -66,7 +66,7 @@ Adding ventilation losses (typically 20-40% of transmission losses) yields the t
 
 ## Chapter 2: Heating System Types & Control Parameters
 
-Green Fusion's platform operates across heterogeneous heating technologies. Each system type has distinct efficiency characteristics, control interfaces, and optimization opportunities.
+Modern heating optimization platform platform operates across heterogeneous heating technologies. Each system type has distinct efficiency characteristics, control interfaces, and optimization opportunities.
 
 ### 2.1 Gas and Oil Boilers
 
@@ -76,7 +76,7 @@ Conventional boilers remain dominant in German residential buildings, with appro
 
 **Condensing efficiency (Brennwertnutzung)** recovers latent heat by cooling flue gases below the water vapor dew point (~57°C for natural gas). Condensing boilers can exceed 100% LHV efficiency (typically 104-109%) by capturing this additional energy.
 
-The critical insight: condensing only occurs when return water temperature is sufficiently low (below ~55°C). Green Fusion's optimization of Rücklauftemperatur directly increases Brennwertnutzung. In the DIE EHRENFELDER case study, reducing return temperatures and optimizing boiler sequencing improved condensing operation significantly.
+The critical insight: condensing only occurs when return water temperature is sufficiently low (below ~55°C). Modern heating optimization platform optimization of Rücklauftemperatur directly increases Brennwertnutzung. In the DIE EHRENFELDER case study, reducing return temperatures and optimizing boiler sequencing improved condensing operation significantly.
 
 **Boiler cascade control** (Kesselfolgeschaltung) in multi-boiler installations determines which units fire and in what sequence. Optimal strategies minimize cycling (Taktverhalten), maintain each boiler in its efficient operating range, and maximize condensing operation. The case study revealed all boilers running simultaneously even in summer, a classic control fault.
 
@@ -144,7 +144,7 @@ Hybrid systems require holistic control strategies that consider:
 
 ## Chapter 3: Key Control Variables
 
-This chapter details the specific parameters that Green Fusion's Energiespar-Pilot optimizes. Understanding these variables is essential for developing and explaining optimization algorithms.
+This chapter details the specific parameters that Modern heating optimization platform Energiespar-Pilot optimizes. Understanding these variables is essential for developing and explaining optimization algorithms.
 
 ### 3.1 Heizkennlinie (Heating Curve)
 
@@ -160,7 +160,7 @@ $$T_{Vorlauf} = T_{base} - m \cdot T_{outdoor}$$
 
 **Optimization approach:**
 
-Green Fusion's analysis of 800 heating systems found average Vorlauftemperatur of 64.4°C at 4°C outdoor temperature, far exceeding actual requirements. Optimal curves deliver minimum flow temperature that maintains comfort.
+Modern heating optimization platform analysis of 800 heating systems found average Vorlauftemperatur of 64.4°C at 4°C outdoor temperature, far exceeding actual requirements. Optimal curves deliver minimum flow temperature that maintains comfort.
 
 Adjustments include:
 - **Slope reduction**: lower temperatures at mild outdoor conditions
@@ -183,7 +183,7 @@ $$\dot{Q} = \dot{m} \cdot c_p \cdot (T_{Vorlauf} - T_{Rücklauf})$$
 
 For fixed heat demand Q̇, lower Rücklauf requires lower mass flow ṁ (reduced pumping energy) or allows lower Vorlauf (reduced losses).
 
-District heating contracts often specify maximum Rücklauftemperatur (50-60°C). Violations trigger penalties. Green Fusion monitors this continuously, adjusting Heizkennlinie parameters to maintain compliance.
+District heating contracts often specify maximum Rücklauftemperatur (50-60°C). Violations trigger penalties. Industry monitors this continuously, adjusting Heizkennlinie parameters to maintain compliance.
 
 ### 3.3 Hysteresis
 
@@ -209,7 +209,7 @@ Buffer tanks (Pufferspeicher) and DHW tanks have temperature setpoints affecting
 - Energy efficiency: lower temperatures reduce standby losses
 - User comfort: adequate hot water availability
 
-Green Fusion data revealed 20% of systems with storage temperatures exceeding 65°C unnecessarily. Reducing to 60°C while ensuring periodic thermal disinfection (Legionellenschaltung) captures significant savings.
+Industry data revealed 20% of systems with storage temperatures exceeding 65°C unnecessarily. Reducing to 60°C while ensuring periodic thermal disinfection (Legionellenschaltung) captures significant savings.
 
 **Buffer tanks** in heat pump systems store thermal energy for:
 - Bridging defrost cycles (air-source heat pumps)
@@ -220,7 +220,7 @@ Optimal setpoints depend on usage patterns, identified through data analysis.
 
 ### 3.5 Night Setback and Summer Mode
 
-**Nachtabsenkung** (night setback) reduces heating during low-occupancy periods. The Green Fusion dataset showed 70% of systems operating without night setback, representing immediate optimization potential.
+**Nachtabsenkung** (night setback) reduces heating during low-occupancy periods. The Industry dataset showed 70% of systems operating without night setback, representing immediate optimization potential.
 
 Implementation considerations:
 - Building thermal mass determines optimal setback depth and timing
@@ -256,7 +256,7 @@ Uses tabulated values and building type assumptions to estimate heat loads. Impl
 2. Calculate required radiator flow rates
 3. Set thermostatic valve presettings accordingly
 
-Limitations: Assumptions may poorly match actual building conditions. Green Fusion considers Verfahren A unreliable for achieving real efficiency gains.
+Limitations: Assumptions may poorly match actual building conditions. Industry considers Verfahren A unreliable for achieving real efficiency gains.
 
 **Verfahren B (Detailed)**
 
@@ -271,7 +271,7 @@ Verfahren B is mandatory for new and modernized systems since 2023. While more e
 
 ### 4.3 Data-Driven Assessment
 
-Green Fusion's approach uses operational data to assess hydraulic balance before recommending physical intervention.
+Modern heating optimization platform approach uses operational data to assess hydraulic balance before recommending physical intervention.
 
 **Diagnostic indicators:**
 - Spreizung variation across circuits (balanced systems show uniform ΔT)
@@ -363,7 +363,7 @@ Optimization targets vary by economic context:
 - Low feed-in tariffs → maximize self-consumption
 - Dynamic tariffs → optimize against price signals
 
-Green Fusion's Energiespar-Pilot implements holistic optimization across these dimensions, coordinating heat pump scheduling, storage charging, and heating curve adjustments to maximize economic and environmental outcomes.
+Modern heating optimization platform Energiespar-Pilot implements holistic optimization across these dimensions, coordinating heat pump scheduling, storage charging, and heating curve adjustments to maximize economic and environmental outcomes.
 
 ### 5.5 System Complexity and Control Requirements
 

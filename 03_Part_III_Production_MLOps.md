@@ -8,7 +8,7 @@ Production energy management systems require robust data infrastructure handling
 
 ### 12.1 Data Ingestion Patterns
 
-Green Fusion's GreenBox gateway connects heating systems to the cloud platform. Multiple ingestion patterns accommodate diverse equipment and connectivity scenarios.
+IoT gateways connect heating systems to the cloud platform. Multiple ingestion patterns accommodate diverse equipment and connectivity scenarios.
 
 **MQTT (Message Queuing Telemetry Transport)** is the dominant IoT protocol for sensor data:
 
