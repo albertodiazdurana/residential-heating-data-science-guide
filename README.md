@@ -147,13 +147,6 @@ This repository includes a Data Science Methodology (DSM) framework in the `DSM/
 - Notebook development standards
 - Documentation best practices
 
-### Additional Study Guides
-
-| Guide | Focus |
-|-------|-------|
-| [Time Series Forecasting Guide](GreenFusion_Technical_Gaps_StudyGuide_TimeSeriesForecasting.md) | RL, MPC, multi-objective optimization |
-| [Segmentation Guide](GreenFusion_Technical_Gaps_StudyGuide_Segmentation.md) | Building clustering, portfolio analysis |
-
 ---
 
 ## Contributing
