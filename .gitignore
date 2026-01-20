@@ -4,6 +4,9 @@
 # Private archive folder (interview prep materials)
 _archive_private/
 
+# Data Science Methodology resources
+DSM/
+
 # Job postings and company-specific documents
 *.pdf
 07_Job_Description_Mapping.md
