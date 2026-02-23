@@ -629,33 +629,29 @@ RL learns optimal control policies through interaction with the environment (or 
 
 **State space** for heating control:
 
-```python
-state = {
-    'T_indoor': 21.5,           # Indoor temperature (°C)
-    'T_outdoor': 5.0,           # Outdoor temperature (°C)
-    'T_storage': 55.0,          # Storage tank temperature (°C)
-    'hour': 14,                 # Hour of day
-    'day_of_week': 2,           # Day of week
-    'electricity_price': 0.25,  # Current price (€/kWh)
-    'T_outdoor_forecast_6h': 3.0,  # Weather forecast
-    'solar_radiation': 150,     # W/m²
-}
-```
+| Variable | Example Value | Description |
+|----------|---------------|-------------|
+| T_indoor | 21.5°C | Indoor temperature |
+| T_outdoor | 5.0°C | Outdoor temperature |
+| T_storage | 55.0°C | Storage tank temperature |
+| hour | 14 | Hour of day |
+| day_of_week | 2 | Day of week |
+| electricity_price | 0.25 EUR/kWh | Current electricity price |
+| T_outdoor_forecast_6h | 3.0°C | 6-hour weather forecast |
+| solar_radiation | 150 W/m² | Current solar radiation |
 
 **Action space:**
 
-```python
-# Discrete actions
-actions = {
-    0: 'heating_off',
-    1: 'heating_low',      # 30% capacity
-    2: 'heating_medium',   # 60% capacity
-    3: 'heating_high',     # 100% capacity
-}
+For discrete action spaces:
 
-# Or continuous: heating power in kW
-action = 15.5  # kW
-```
+| Action | Mode | Capacity |
+|--------|------|----------|
+| 0 | Heating off | 0% |
+| 1 | Heating low | 30% |
+| 2 | Heating medium | 60% |
+| 3 | Heating high | 100% |
+
+Alternatively, the action space can be continuous, representing heating power directly in kW (e.g., 15.5 kW).
 
 **Reward function:**
 

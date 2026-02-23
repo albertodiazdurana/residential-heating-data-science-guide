@@ -1,8 +1,8 @@
 # Data Science for Residential Energy Systems
 
-A domain knowledge repository bridging energy engineering fundamentals with data science and machine learning applications for building energy optimization.
+A domain knowledge framework bridging energy engineering fundamentals with data science and machine learning for building energy optimization. Developed as part of ongoing research toward a methodological contribution: *A Framework for ML Deployment in Building Energy Management Systems*.
 
-**Focus:** Systematic documentation of German heating standards (DIN, VDI, GEG) with applied ML methodologies for residential heating system optimization.
+**Focus:** Systematic documentation of German heating standards (DIN, VDI, GEG) with applied ML methodologies for residential heating system optimization. Structured using the [Agentic AI Data Science Methodology (DSM)](https://github.com/albertodiazdurana/agentic-ai-data-science-methodology) for human-AI collaborative development.
 
 ---
 
@@ -23,11 +23,11 @@ This repository addresses that gap through:
 
 | Part | Topic | Scope |
 |------|-------|-------|
-| [Part I](01_Part_I_Domain_Fundamentals.md) | Domain Fundamentals | Thermodynamics, heating system types, German standards |
-| [Part II](02_Part_II_Data_Science_ML.md) | Data Science & ML | Time series analysis, forecasting, anomaly detection, optimization |
-| [Part III](03_Part_III_Production_MLOps.md) | Production & MLOps | Data pipelines, deployment patterns, monitoring |
-| [Part IV](04_Part_IV_Technical_Stack.md) | Technical Stack | Python, SQL, GraphQL, API design |
-| [Part V](05_Part_V_Interview_Scenarios.md) | Applied Scenarios | Case studies, system design, cross-functional collaboration |
+| [Part I](01_Domain_Fundamentals.md) | Domain Fundamentals | Thermodynamics, heating system types, German standards |
+| [Part II](02_Data_Science_ML.md) | Data Science & ML | Time series analysis, forecasting, anomaly detection, optimization |
+| [Part III](03_Production_MLOps.md) | Production & MLOps | Data pipelines, deployment patterns, monitoring |
+| [Part IV](04_Technical_Stack.md) | Technical Stack | Python, SQL, GraphQL, API design |
+| [Part V](05_Applied_Scenarios.md) | Applied Scenarios | Case studies, system design, cross-functional collaboration |
 | [References](06_References.md) | References | Academic sources, regulations, technical glossary |
 
 ---
@@ -137,6 +137,20 @@ See [06_References.md](06_References.md) for complete glossary.
 
 ---
 
+## Repository Ecosystem
+
+This project is part of a three-repository system:
+
+| Repository | Role | Content |
+|------------|------|---------|
+| **[Residential Heating DS Guide](https://github.com/albertodiazdurana/residential-heating-data-science-guide)** (this repo) | Framework & Theory | Domain knowledge, methodology, German standards documentation |
+| **[Residential Energy Apps](https://github.com/albertodiazdurana/dsm-residential-energy)** ([Live App](https://data-science-residential-energy-systems-heating-curve.streamlit.app/)) | Implementation | Heating curve simulator, interactive Streamlit applications |
+| **[Agentic AI DS Methodology (DSM)](https://github.com/albertodiazdurana/agentic-ai-data-science-methodology)** | Meta-Methodology | Structured human-AI collaboration framework for DS projects |
+
+**Integration:** Theory (this repo) is validated by Practice (code repo), executed using the Meta-methodology (DSM).
+
+---
+
 ## Contributing
 
 Contributions are welcome. This repository aims to serve as a professional reference for the energy transition.
@@ -153,10 +167,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## Author
 
-**Alberto Diaz Durana**
+**Alberto Diaz-Durana**
+Freelance Data Scientist & ML Engineer | 10+ Years Experience
 
-- Energy engineering background (TU Berlin) with data science specialization
-- Professional experience in heating system optimization and ML deployment
+- MSc Process, Energy & Environmental Systems Engineering (TU Berlin)
+- PhD Candidate, Energy Planning & Machine Learning (TU Berlin) -- [CPOTE 2020 publication](https://github.com/albertodiazdurana/Prediction-of-cost-efficient-measures-to-improve-energy-access)
+- Specialization in building energy systems, thermo-economic modeling, and applied ML for energy optimization
+- Production ML experience across energy, cement manufacturing, and process mining domains
 - [GitHub](https://github.com/albertodiazdurana) | [LinkedIn](https://www.linkedin.com/in/albertodiazdurana/)
 
 ---
@@ -184,4 +201,4 @@ Under the following terms:
 ---
 
 **Status:** Active development
-**Last Updated:** January 2026
+**Last Updated:** February 2026

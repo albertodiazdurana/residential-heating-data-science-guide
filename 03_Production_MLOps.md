@@ -18,7 +18,7 @@ import json
 from datetime import datetime
 
 class SensorDataIngester:
-    """MQTT client for ingesting sensor data from GreenBox devices."""
+    """MQTT client for ingesting sensor data from edge gateway devices."""
     
     def __init__(self, broker_host, broker_port, topic_prefix):
         self.client = mqtt.Client()
@@ -38,7 +38,7 @@ class SensorDataIngester:
             payload = json.loads(msg.payload.decode())
             
             # Extract building_id and sensor_id from topic
-            # Topic format: greenbox/{building_id}/sensors/{sensor_type}
+            # Topic format: gateway/{building_id}/sensors/{sensor_type}
             parts = msg.topic.split('/')
             building_id = parts[1]
             sensor_type = parts[3]
@@ -73,7 +73,7 @@ class SensorDataIngester:
 # Recommended sensor message schema
 sensor_message = {
     "timestamp": "2025-01-15T14:30:00Z",  # ISO 8601 UTC
-    "device_id": "greenbox-abc123",
+    "device_id": "gateway-abc123",
     "readings": [
         {
             "sensor_id": "vorlauf_temp_hk1",
@@ -1194,14 +1194,14 @@ async def optimize_building(request: OptimizationRequest,
 
 ### 15.2 Edge Deployment Considerations
 
-The GreenBox gateway enables edge computing for latency-sensitive control:
+The edge gateway enables edge computing for latency-sensitive control:
 
 ```python
 # Lightweight model for edge deployment
 import onnxruntime as ort
 
 class EdgeOptimizer:
-    """Lightweight optimizer for GreenBox edge deployment."""
+    """Lightweight optimizer for edge gateway deployment."""
     
     def __init__(self, model_path: str):
         # Load ONNX model for efficient inference

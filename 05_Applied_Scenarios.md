@@ -20,25 +20,19 @@ High energy consumption relative to building characteristics, no visibility into
 
 The first step required establishing data infrastructure where none existed:
 
-```python
-# Data sources integrated via IoT gateway
-data_schema = {
-    'primary_sensors': {
-        'vorlauf_temp': 'Anlegefühler on supply pipe (°C)',
-        'ruecklauf_temp': 'Anlegefühler on return pipe (°C)',
-        'outdoor_temp': 'External sensor (°C)',
-        'flow_rate': 'Ultrasonic flow meter (L/min)'
-    },
-    'meter_data': {
-        'waermemengenzaehler': 'Heat meter via M-Bus (kWh)',
-    },
-    'external_data': {
-        'weather_forecast': 'DWD API (temperature, wind, radiation)',
-    },
-    'sampling_rate': '15 minutes',
-    'transmission': 'Vodafone API to Cloud Platform'
-}
-```
+The following data sources were integrated via an IoT gateway, sampled at 15-minute intervals and transmitted through the Vodafone API to a cloud platform:
+
+**Primary sensors:**
+- Vorlauftemperatur (flow temperature): Anlegefuehler on supply pipe (°C)
+- Ruecklauftemperatur (return temperature): Anlegefuehler on return pipe (°C)
+- Outdoor temperature: External sensor (°C)
+- Flow rate: Ultrasonic flow meter (L/min)
+
+**Meter data:**
+- Waermemengenzaehler (heat meter): Reading via M-Bus (kWh)
+
+**External data:**
+- Weather forecast: DWD API (temperature, wind, radiation)
 
 **Phase 2: Baseline Analysis (4 weeks)**
 
@@ -196,7 +190,7 @@ def measure_optimization_impact(
 
 **Outcome:** 16.5% consumption reduction, achieved through dynamic Heizkennlinie adjustment and automated summer/winter mode switching. No comfort complaints from residents.
 
-**Interview Discussion Points:**
+**Discussion Points:**
 - Why weather normalization matters for comparing different time periods
 - Trade-offs between aggressive optimization and comfort risk
 - How the 4-week baseline period informs model parameters
@@ -218,37 +212,29 @@ The renewable system was not delivering expected efficiency. Without detailed mo
 
 Heat pump systems require comprehensive monitoring to diagnose efficiency issues:
 
-```python
-monitoring_schema = {
-    'heat_pump_1': {
-        'electrical_power_kw': 'Compressor + auxiliary power',
-        'thermal_output_kw': 'Heat delivered to buffer',
-        'source_temp': 'Evaporator inlet (°C)',
-        'sink_temp': 'Condenser outlet (°C)',
-        'compressor_status': 'On/Off/Defrost',
-        'cop_instantaneous': 'Calculated real-time COP'
-    },
-    'heat_pump_2': {
-        # Same schema
-    },
-    'auxiliary_systems': {
-        'durchlauferhitzer_power_kw': 'Backup electric heater',
-        'circulation_pump_power_w': 'Distribution pumps',
-    },
-    'storage': {
-        'buffer_temp_top': '°C',
-        'buffer_temp_middle': '°C', 
-        'buffer_temp_bottom': '°C',
-        'dhw_temp': 'Domestic hot water tank (°C)'
-    },
-    'pv_system': {
-        'generation_kw': 'Current PV output',
-        'grid_import_kw': 'Power from grid',
-        'grid_export_kw': 'Power to grid',
-        'self_consumption_kw': 'PV used on-site'
-    }
-}
-```
+The monitoring system covers five subsystems:
+
+**Heat pumps (1 and 2, identical schema):**
+- Electrical power (kW): compressor plus auxiliary power
+- Thermal output (kW): heat delivered to buffer
+- Source temperature: evaporator inlet (°C)
+- Sink temperature: condenser outlet (°C)
+- Compressor status: On / Off / Defrost
+- COP instantaneous: calculated real-time COP
+
+**Auxiliary systems:**
+- Durchlauferhitzer (backup electric heater) power (kW)
+- Circulation pump power (W)
+
+**Storage:**
+- Buffer tank temperatures: top, middle, and bottom (°C)
+- DHW (domestic hot water) tank temperature (°C)
+
+**PV system:**
+- Generation (kW): current PV output
+- Grid import (kW): power drawn from grid
+- Grid export (kW): power fed to grid
+- Self-consumption (kW): PV used on-site
 
 **Phase 2: Root Cause Analysis**
 
@@ -394,19 +380,16 @@ class HeatPumpCascadeOptimizer:
 
 **Phase 4: Results**
 
-```python
-results = {
-    'dhw_electricity_reduction_pct': 20,
-    'total_system_savings_target_pct': 15,
-    'system_cop_before': 2.1,
-    'system_cop_after': 3.2,
-    'backup_heater_runtime_reduction_pct': 75,
-    'key_intervention': 'Raised backup heater activation threshold, '
-                        'prioritized HP operation, PV-synchronized charging'
-}
-```
+After implementing the cascade optimization:
 
-**Interview Discussion Points:**
+- DHW electricity reduction: 20%
+- Total system savings target: 15%
+- System COP before optimization: 2.1
+- System COP after optimization: 3.2
+- Backup heater runtime reduction: 75%
+- Key intervention: Raised backup heater activation threshold, prioritized heat pump operation, and implemented PV-synchronized charging
+
+**Discussion Points:**
 - How to diagnose efficiency issues in complex multi-source systems
 - The importance of monitoring all energy flows, not just aggregate consumption
 - Control hierarchy: comfort → efficiency → cost optimization
@@ -428,51 +411,26 @@ Excessive consumption with unknown root causes. No visibility into which boilers
 
 Legacy systems require creative instrumentation approaches:
 
-```python
-digitalization_strategy = {
-    'challenge': 'No bus interfaces on old gas boilers',
-    'solution': {
-        'temperature_monitoring': 'Anlegefühler (clamp-on sensors) on pipes',
-        'boiler_status': 'Current transformers on burner power supply',
-        'gas_consumption': 'Pulse output from gas meter (retrofit)',
-        'integration': 'IoT gateway aggregating all signals'
-    },
-    'data_points_added': 24,
-    'installation_time_hours': 6,
-    'invasiveness': 'Minimal - no interruption to heating service'
-}
-```
+The primary challenge was that the old gas boilers had no bus interfaces for digital communication. The solution used non-invasive retrofit instrumentation:
+
+- **Temperature monitoring:** Anlegefuehler (clamp-on sensors) on pipes
+- **Boiler status:** Current transformers on burner power supply
+- **Gas consumption:** Pulse output from gas meter (retrofit)
+- **Integration:** IoT gateway aggregating all signals
+
+The installation added 24 data points in approximately 6 hours with minimal invasiveness and no interruption to heating service.
 
 **Phase 2: Baseline Analysis Findings**
 
-```python
-baseline_issues = {
-    'simultaneous_operation': {
-        'description': 'All boilers running simultaneously even in summer',
-        'evidence': 'Burner status shows 3/3 boilers active during DHW-only periods',
-        'cause': 'No cascade sequencing - each boiler responds to own thermostat',
-        'impact': 'Excessive standby losses, poor part-load efficiency'
-    },
-    'high_dhw_temps': {
-        'description': 'DHW storage at 70°C (target: 60°C)',
-        'evidence': 'Continuous temperature logging of Speicher',
-        'cause': 'Conservative factory setting',
-        'impact': '~10% excess losses from storage'
-    },
-    'poor_spreizung': {
-        'description': 'ΔT of only 8-10K across heating circuits',
-        'evidence': 'Vorlauf/Rücklauf logging',
-        'cause': 'Excessive flow rates, possibly hydraulic imbalance',
-        'impact': 'Reduced condensing operation, higher pump energy'
-    },
-    'no_night_setback': {
-        'description': 'Constant operation 24/7',
-        'evidence': 'No pattern change in night hours',
-        'cause': 'Never configured',
-        'impact': 'Estimated 8-10% excess consumption'
-    }
-}
-```
+The baseline analysis identified four key issues:
+
+**1. Simultaneous boiler operation.** All boilers were running simultaneously, even in summer. Burner status showed 3 out of 3 boilers active during DHW-only periods. Without cascade sequencing, each boiler responded to its own thermostat independently, causing excessive standby losses and poor part-load efficiency.
+
+**2. Excessive DHW storage temperature.** The Speicher (DHW storage) was operating at 70°C instead of the target 60°C. Continuous temperature logging confirmed this was due to conservative factory settings, resulting in approximately 10% excess storage losses.
+
+**3. Poor Spreizung (temperature spread).** The temperature difference across heating circuits was only 8-10K, as evidenced by Vorlauf/Ruecklauf logging. This was likely caused by excessive flow rates and possible hydraulic imbalance, reducing condensing operation and increasing pump energy consumption.
+
+**4. No night setback (Nachtabsenkung).** The system operated at constant output 24/7 with no pattern change during night hours. Night setback had never been configured, leading to an estimated 8-10% excess consumption.
 
 **Phase 3: Optimization Implementation**
 
@@ -578,23 +536,17 @@ class GasBoilerCascadeController:
 
 **Phase 4: Results and Expansion**
 
-```python
-results = {
-    'dhw_period_savings_pct': 'Substantial (exact % not published)',
-    'heating_season_savings_expected_pct': 15,
-    'key_improvements': [
-        'Cascade sequencing preventing simultaneous operation',
-        'Reduced DHW storage temperature to 60°C',
-        'Implemented night setback',
-        'Optimized Heizkennlinie for actual building response',
-        'Reduced unnecessary boiler starts (anti-cycling)'
-    ],
-    'rollout': '23 additional buildings in progress',
-    'system_types_in_rollout': ['gas', 'pellet', 'hybrid_heat_pump']
-}
-```
+The optimization delivered substantial savings during the DHW-only period (exact percentage not published), with 15% expected savings over the full heating season. Key improvements included:
 
-**Interview Discussion Points:**
+- Cascade sequencing preventing simultaneous boiler operation
+- Reduced DHW storage temperature to 60°C
+- Implemented Nachtabsenkung (night setback)
+- Optimized Heizkennlinie (heating curve) for actual building thermal response
+- Reduced unnecessary boiler starts through anti-cycling logic
+
+The approach is being rolled out to 23 additional buildings, covering gas, pellet, and hybrid heat pump system types.
+
+**Discussion Points:**
 - Strategies for digitalizing legacy systems without bus interfaces
 - Cascade control algorithms and boiler sequencing
 - Why condensing operation matters (Brennwertnutzung) and how return temperature affects it
@@ -604,7 +556,7 @@ results = {
 
 ## Chapter 19: System Design Questions
 
-This chapter prepares you for system design interviews with architecture questions relevant to energy management platforms.
+This chapter prepares you for system design situations with architecture questions relevant to energy management platforms.
 
 ### 19.1 Design: Energy Management Platform for 3,000 Buildings
 
@@ -622,7 +574,7 @@ This chapter prepares you for system design interviews with architecture questio
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                           EDGE LAYER                                     │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐       ┌──────────┐           │
-│  │ GreenBox │  │ GreenBox │  │ GreenBox │  ...  │ GreenBox │           │
+│  │ Gateway  │  │ Gateway  │  │ Gateway  │  ...  │ Gateway  │           │
 │  │ Building1│  │ Building2│  │ Building3│       │ Building │           │
 │  └────┬─────┘  └────┬─────┘  └────┬─────┘       └────┬─────┘           │
 │       │             │             │                   │                 │
@@ -703,61 +655,27 @@ This chapter prepares you for system design interviews with architecture questio
 **Key Design Decisions:**
 
 **Data Partitioning:**
-```python
-# Partition time-series data by building_id and time
-# Enables efficient queries for single-building analysis
-# and time-range aggregations across portfolio
+Time-series data is partitioned by building_id (hash partition) and time (range partition, monthly). This enables efficient queries for single-building analysis and time-range aggregations across the portfolio.
 
-partition_scheme = {
-    'primary_partition': 'building_id',  # Hash partition
-    'secondary_partition': 'time',        # Range partition (monthly)
-    'retention': {
-        'raw_15min': '90 days',
-        'hourly_aggregates': '2 years',
-        'daily_aggregates': '10 years'
-    }
-}
-```
+**Retention policy:**
+
+| Resolution | Retention |
+|-----------|-----------|
+| Raw 15-minute | 90 days |
+| Hourly aggregates | 2 years |
+| Daily aggregates | 10 years |
 
 **Scaling Considerations:**
-```python
-scaling_analysis = {
-    'data_volume': {
-        'sensors_per_building': 20,
-        'buildings': 3000,
-        'readings_per_day': 96,  # 15-min intervals
-        'bytes_per_reading': 100,
-        'daily_volume_gb': 20 * 3000 * 96 * 100 / 1e9,  # ~0.58 GB/day
-        'yearly_volume_gb': 0.58 * 365,  # ~210 GB/year
-    },
-    'compute': {
-        'optimization_runs_per_hour': 3000,
-        'avg_optimization_time_sec': 2,
-        'required_parallelism': 3000 * 2 / 3600,  # ~1.7 parallel workers
-        'provisioned_workers': 10  # Headroom for spikes
-    }
-}
-```
+**Data volume:** With 20 sensors per building, 3,000 buildings, 96 readings per day (15-minute intervals), and approximately 100 bytes per reading, the system generates roughly 0.58 GB/day or 210 GB/year.
+
+**Compute:** Running 3,000 optimization jobs per hour at an average of 2 seconds each requires approximately 1.7 parallel workers. Provisioning 10 workers provides headroom for traffic spikes.
 
 **Fault Tolerance:**
-```python
-fault_tolerance = {
-    'edge_offline': {
-        'behavior': 'GreenBox caches commands, executes last-known-good',
-        'max_offline_hours': 24,
-        'reconnection': 'Automatic with backfill of buffered data'
-    },
-    'cloud_partial_failure': {
-        'database_replica': 'Multi-AZ PostgreSQL, read replicas',
-        'timeseries': 'TimescaleDB with replication',
-        'processing': 'Kubernetes auto-scaling, pod restart'
-    },
-    'optimization_failure': {
-        'behavior': 'Maintain current setpoints, alert operations',
-        'fallback': 'Rule-based defaults if model unavailable'
-    }
-}
-```
+**Edge offline:** When an edge gateway loses connectivity, it caches commands and executes the last-known-good setpoints for up to 24 hours. On reconnection, buffered data is automatically backfilled.
+
+**Cloud partial failure:** The database layer uses multi-AZ PostgreSQL with read replicas. TimescaleDB provides time-series replication. Processing runs on Kubernetes with auto-scaling and automatic pod restart.
+
+**Optimization failure:** If the optimization engine fails, the system maintains current setpoints and alerts operations. If the model becomes unavailable entirely, rule-based defaults serve as the fallback.
 
 ---
 
@@ -915,22 +833,13 @@ class AlertAggregator:
 
 **Tenant Isolation Strategy:**
 
-```python
-isolation_approach = {
-    'strategy': 'Shared database, tenant column isolation',
-    'rationale': [
-        'Cost-effective for large number of small-medium tenants',
-        'Simplified operations vs. database-per-tenant',
-        'Row-level security enforces isolation'
-    ],
-    'implementation': {
-        'every_table': 'Includes tenant_id column',
-        'foreign_keys': 'Compound keys include tenant_id',
-        'indexes': 'All queries include tenant_id prefix',
-        'views': 'Tenant-scoped views for application layer'
-    }
-}
-```
+The chosen strategy is shared database with tenant column isolation. This approach is cost-effective for a large number of small-to-medium tenants, simplifies operations compared to database-per-tenant, and enforces isolation through row-level security.
+
+**Implementation details:**
+- Every table includes a `tenant_id` column
+- Foreign keys use compound keys that include `tenant_id`
+- All query indexes include `tenant_id` as a prefix
+- Tenant-scoped views provide the interface for the application layer
 
 **PostgreSQL Row-Level Security:**
 
@@ -1021,43 +930,18 @@ This chapter prepares you for behavioral questions and discussions about working
 
 **Effective Collaboration Framework:**
 
-```python
-collaboration_principles = {
-    'respect_domain_expertise': {
-        'example': 'Energy engineer says "return temp above 55°C prevents condensing"',
-        'response': 'Incorporate as hard constraint in optimization, not soft penalty',
-        'anti_pattern': 'Treating domain rules as "suggestions" the model can override'
-    },
-    
-    'translate_bidirectionally': {
-        'ds_to_engineer': {
-            'instead_of': 'The model has 0.85 R² with RMSE of 3.2 kWh',
-            'say': 'The model predicts consumption within ±3 kWh 85% of the time, '
-                   'about as accurate as reading the meter with one decimal place'
-        },
-        'engineer_to_ds': {
-            'they_say': 'The heating curve is too steep',
-            'understand_as': 'Slope parameter in Vorlauf = f(outdoor) is too high, '
-                            'causing excessive flow temps in mild weather'
-        }
-    },
-    
-    'joint_validation': {
-        'approach': 'Review model outputs together before deployment',
-        'questions_to_ask': [
-            'Does this recommendation make physical sense?',
-            'Have you seen buildings behave this way?',
-            'What could go wrong if we implement this?'
-        ]
-    },
-    
-    'feedback_loops': {
-        'structure': 'Weekly review of optimization outcomes',
-        'metrics_shared': 'Energy savings, comfort complaints, equipment alerts',
-        'engineer_input': 'Explain unexpected patterns, suggest new features'
-    }
-}
-```
+**Respect domain expertise.** When an energy engineer states that "return temperature above 55°C prevents condensing," incorporate this as a hard constraint in the optimization, not a soft penalty. The anti-pattern is treating domain rules as suggestions that the model can override.
+
+**Translate bidirectionally.** Communication must flow in both directions:
+- *Data science to engineer:* Instead of saying "The model has 0.85 R-squared with RMSE of 3.2 kWh," say "The model predicts consumption within plus/minus 3 kWh 85% of the time, about as accurate as reading the meter with one decimal place."
+- *Engineer to data science:* When they say "The heating curve is too steep," understand this as: the slope parameter in Vorlauf = f(outdoor) is too high, causing excessive flow temperatures in mild weather.
+
+**Joint validation.** Review model outputs together before deployment. Key questions to ask the engineer:
+- Does this recommendation make physical sense?
+- Have you seen buildings behave this way?
+- What could go wrong if we implement this?
+
+**Feedback loops.** Establish a weekly review of optimization outcomes. Share energy savings, comfort complaints, and equipment alerts. The engineer's role is to explain unexpected patterns and suggest new features based on domain insight.
 
 **Communication Example:**
 
@@ -1103,64 +987,44 @@ def present_anomaly_findings(anomalies_df: pd.DataFrame) -> str:
 
 **Requirements Engineering Process:**
 
-```python
-def translate_customer_requirement(raw_requirement: str) -> dict:
-    """
-    Translate business requirement into technical specification.
-    """
-    
-    # Step 1: Clarify and quantify
-    clarification_questions = [
-        "What is the baseline? (Last year's consumption? Average of 3 years?)",
-        "Is 20% absolute or weather-normalized?",
-        "What's the timeline? (This heating season? Over 2 years?)",
-        "Are there constraints? (No comfort reduction? No capital investment?)",
-        "How will success be measured? (Meter readings? Billing data?)"
-    ]
-    
-    # Step 2: Define measurable success criteria
-    success_criteria = {
-        'primary_metric': 'Weather-normalized energy consumption (kWh/HDD)',
-        'target': '20% reduction vs. baseline',
-        'baseline_period': '2023-24 heating season',
-        'measurement_period': '2024-25 heating season',
-        'comfort_constraint': 'Indoor temp >= 20°C during occupied hours',
-        'measurement_method': 'Heat meter readings, monthly granularity'
-    }
-    
-    # Step 3: Identify technical interventions
-    technical_approach = {
-        'phase_1_quick_wins': [
-            'Optimize Heizkennlinie (expected: 5-10% savings)',
-            'Implement night setback (expected: 3-5% savings)',
-            'Reduce DHW storage temp to 60°C (expected: 2-3% savings)'
-        ],
-        'phase_2_advanced': [
-            'Dynamic weather-predictive control (expected: 3-5% additional)',
-            'Hydraulic balancing where data indicates need (expected: 2-5%)'
-        ],
-        'total_expected_range': '13-23%',
-        'confidence': 'Medium - depends on baseline system state'
-    }
-    
-    # Step 4: Define project milestones
-    milestones = [
-        {'week': 0, 'deliverable': 'GreenBox installation, data collection starts'},
-        {'week': 4, 'deliverable': 'Baseline analysis complete, optimization plan'},
-        {'week': 6, 'deliverable': 'Phase 1 optimizations deployed'},
-        {'week': 12, 'deliverable': 'First monthly savings report'},
-        {'week': 24, 'deliverable': 'Mid-season review, Phase 2 if needed'},
-        {'week': 40, 'deliverable': 'Full heating season results'}
-    ]
-    
-    return {
-        'original_requirement': raw_requirement,
-        'clarification_needed': clarification_questions,
-        'success_criteria': success_criteria,
-        'technical_approach': technical_approach,
-        'milestones': milestones
-    }
-```
+**Step 1: Clarify and quantify.** Before defining a technical approach, ask the customer:
+- What is the baseline? (Last year's consumption? Average of 3 years?)
+- Is the 20% target absolute or weather-normalized?
+- What is the timeline? (This heating season? Over 2 years?)
+- Are there constraints? (No comfort reduction? No capital investment?)
+- How will success be measured? (Meter readings? Billing data?)
+
+**Step 2: Define measurable success criteria.**
+- Primary metric: weather-normalized energy consumption (kWh/HDD)
+- Target: 20% reduction vs. baseline
+- Baseline period: 2023-24 heating season
+- Measurement period: 2024-25 heating season
+- Comfort constraint: indoor temperature >= 20°C during occupied hours
+- Measurement method: heat meter readings, monthly granularity
+
+**Step 3: Identify technical interventions.**
+
+*Phase 1 (quick wins):*
+- Optimize Heizkennlinie (heating curve), expected 5-10% savings
+- Implement Nachtabsenkung (night setback), expected 3-5% savings
+- Reduce DHW storage temperature to 60°C, expected 2-3% savings
+
+*Phase 2 (advanced):*
+- Dynamic weather-predictive control, expected 3-5% additional savings
+- Hydraulic balancing where data indicates need, expected 2-5% savings
+
+Total expected range: 13-23%. Confidence: medium, depends on baseline system state.
+
+**Step 4: Define project milestones.**
+
+| Week | Deliverable |
+|------|-------------|
+| 0 | Edge gateway installation, data collection starts |
+| 4 | Baseline analysis complete, optimization plan |
+| 6 | Phase 1 optimizations deployed |
+| 12 | First monthly savings report |
+| 24 | Mid-season review, Phase 2 if needed |
+| 40 | Full heating season results |
 
 ### 20.3 Communicating ML Results
 
@@ -1288,71 +1152,19 @@ def create_savings_visualization(monthly_data: pd.DataFrame,
 
 **STAR Response Framework:**
 
-```python
-response_structure = {
-    'situation': """
-        At a previous role, I developed an optimization model for HVAC scheduling 
-        that recommended running cooling systems at night to pre-cool buildings. 
-        The facilities team rejected this, saying it would increase energy costs.
-    """,
-    
-    'task': """
-        I needed to either validate my model's recommendations or understand 
-        what factor I had missed that the domain experts knew intuitively.
-    """,
-    
-    'action': """
-        I scheduled a working session with the lead facilities engineer. 
-        Instead of defending my model, I asked him to walk me through how 
-        he would approach the problem. 
-        
-        I learned that electricity rates had a demand charge component I 
-        hadn't modeled - running at night would shift energy but create a 
-        new demand peak that increased the monthly bill.
-        
-        I updated the model to include demand charges, which completely 
-        changed the optimal schedule.
-    """,
-    
-    'result': """
-        The revised model was accepted and implemented. Energy costs decreased 
-        by 12% over three months. More importantly, I established a collaborative 
-        relationship with the facilities team - they now come to me with 
-        optimization ideas because they trust the process.
-        
-        Key lesson: Domain experts often have valid information encoded as 
-        intuition. My job is to extract and formalize that knowledge.
-    """
-}
-```
+**Situation:** At a previous role, I developed an optimization model for HVAC scheduling that recommended running cooling systems at night to pre-cool buildings. The facilities team rejected this, saying it would increase energy costs.
+
+**Task:** I needed to either validate my model's recommendations or understand what factor I had missed that the domain experts knew intuitively.
+
+**Action:** I scheduled a working session with the lead facilities engineer. Instead of defending my model, I asked him to walk me through how he would approach the problem. I learned that electricity rates had a demand charge component I had not modeled; running at night would shift energy but create a new demand peak that increased the monthly bill. I updated the model to include demand charges, which completely changed the optimal schedule.
+
+**Result:** The revised model was accepted and implemented. Energy costs decreased by 12% over three months. More importantly, I established a collaborative relationship with the facilities team; they now come to me with optimization ideas because they trust the process. Key lesson: domain experts often have valid information encoded as intuition. The data scientist's job is to extract and formalize that knowledge.
 
 **Question:** "How do you handle disagreements about model approaches with other data scientists?"
 
-```python
-response_structure = {
-    'approach': """
-        I focus on defining clear evaluation criteria before debating approaches.
-        
-        For example, if a colleague prefers gradient boosting while I think 
-        a neural network would work better, we agree on:
-        1. The exact metric (e.g., RMSE on time-series validation)
-        2. The validation methodology (e.g., walk-forward with 24h gap)
-        3. Computational constraints (e.g., must run in < 5 seconds for production)
-        
-        Then we implement both and compare. Data resolves most disagreements.
-    """,
-    
-    'when_data_is_ambiguous': """
-        If results are similar, we consider:
-        - Interpretability requirements (important in regulated energy sector)
-        - Maintainability (who else needs to understand this code?)
-        - Robustness to distribution shift
-        
-        I'm willing to defer to a colleague's preference if the objective 
-        metrics are equivalent - team cohesion matters more than being right.
-    """
-}
-```
+**Approach:** I focus on defining clear evaluation criteria before debating approaches. For example, if a colleague prefers gradient boosting while I think a neural network would work better, we first agree on: (1) the exact metric, such as RMSE on time-series validation; (2) the validation methodology, such as walk-forward with a 24-hour gap; and (3) computational constraints, such as inference under 5 seconds for production. Then we implement both and compare. Data resolves most disagreements.
+
+**When data is ambiguous:** If results are similar, we consider interpretability requirements (important in the regulated energy sector), maintainability (who else needs to understand this code?), and robustness to distribution shift. I am willing to defer to a colleague's preference if the objective metrics are equivalent; team cohesion matters more than being right.
 
 ---
 
