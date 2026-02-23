@@ -12,9 +12,9 @@ The energy sector faces a critical skills gap. According to the [IEA World Energ
 
 This repository addresses that gap through:
 
-- Comprehensive documentation of German heating standards for data science practitioners
+- Comprehensive documentation of German heating standards for data scientists, ML engineers, and data engineers
 - ML methodologies specifically adapted for energy time series analysis
-- Production-grade MLOps patterns for IoT and sensor data systems
+- Production-grade MLOps and data engineering patterns for IoT and sensor data systems
 - Applied case studies demonstrating real-world optimization approaches
 
 ---
@@ -34,7 +34,7 @@ This repository addresses that gap through:
 
 ## Target Audience
 
-- **Data Scientists** transitioning into energy and building optimization domains
+- **Data Scientists, ML-, and Data-Engineers** transitioning into energy and building optimization domains
 - **Energy Engineers** integrating ML and data-driven approaches into practice
 - **Researchers** in building science, smart buildings, and energy efficiency
 - **Graduate Students** in energy systems, building physics, or applied ML
@@ -75,7 +75,7 @@ Deployment and operational considerations for ML systems:
 
 ### Part IV: Technical Stack
 
-Implementation reference for energy data systems:
+Implementation and data engineering reference for energy systems:
 
 - **Chapter 16:** Python for energy data science (Pandas, NumPy, scikit-learn)
 - **Chapter 17:** Data access patterns (SQL window functions, GraphQL, REST APIs)
