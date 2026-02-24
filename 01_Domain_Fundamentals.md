@@ -1,5 +1,34 @@
 # Part I: Domain Fundamentals - Heating Systems & Energy Technology
 
+## Table of Contents
+
+- [Chapter 1: Thermodynamic Principles for Heating Systems](#chapter-1-thermodynamic-principles-for-heating-systems)
+  - [1.1 Heat Transfer Modes](#11-heat-transfer-modes)
+  - [1.2 Thermal Mass and Building Inertia](#12-thermal-mass-and-building-inertia)
+  - [1.3 Degree-Day Calculations and Heating Load Estimation](#13-degree-day-calculations-and-heating-load-estimation)
+- [Chapter 2: Heating System Types & Control Parameters](#chapter-2-heating-system-types--control-parameters)
+  - [2.1 Gas and Oil Boilers](#21-gas-and-oil-boilers)
+  - [2.2 District Heating (Fernwärme)](#22-district-heating-fernwärme)
+  - [2.3 Heat Pumps](#23-heat-pumps)
+  - [2.4 Combined Heat and Power (BHKW)](#24-combined-heat-and-power-bhkw)
+  - [2.5 Hybrid and Multivalent Systems](#25-hybrid-and-multivalent-systems)
+- [Chapter 3: Key Control Variables](#chapter-3-key-control-variables)
+  - [3.1 Heizkennlinie (Heating Curve)](#31-heizkennlinie-heating-curve)
+  - [3.2 Vorlauf- und Rücklauftemperatur](#32-vorlauf--und-rücklauftemperatur)
+  - [3.3 Hysteresis](#33-hysteresis)
+  - [3.4 Speicher-Solltemperatur (Storage Setpoint)](#34-speicher-solltemperatur-storage-setpoint)
+  - [3.5 Night Setback and Summer Mode](#35-night-setback-and-summer-mode)
+- [Chapter 4: Hydraulic Balancing (Hydraulischer Abgleich)](#chapter-4-hydraulic-balancing-hydraulischer-abgleich)
+  - [4.1 The Hydraulic Problem](#41-the-hydraulic-problem)
+  - [4.2 Verfahren A vs. Verfahren B](#42-verfahren-a-vs-verfahren-b)
+  - [4.3 Data-Driven Assessment](#43-data-driven-assessment)
+- [Chapter 5: Sector Coupling (Sektorkopplung)](#chapter-5-sector-coupling-sektorkopplung)
+  - [5.1 The Integration Challenge](#51-the-integration-challenge)
+  - [5.2 PV and Heat Pump Orchestration](#52-pv-and-heat-pump-orchestration)
+  - [5.3 Dynamic Electricity Pricing](#53-dynamic-electricity-pricing)
+  - [5.4 Self-Consumption Maximization](#54-self-consumption-maximization)
+  - [5.5 System Complexity and Control Requirements](#55-system-complexity-and-control-requirements)
+
 ---
 
 ## Chapter 1: Thermodynamic Principles for Heating Systems

@@ -1,5 +1,25 @@
 # Part III: Production Engineering & MLOps
 
+## Table of Contents
+
+- [Chapter 12: Data Pipelines for IoT/Energy Systems](#chapter-12-data-pipelines-for-iotenergy-systems)
+  - [12.1 Data Ingestion Patterns](#121-data-ingestion-patterns)
+  - [12.2 Time-Series Database Storage](#122-time-series-database-storage)
+  - [12.3 ETL Patterns for Sensor Data](#123-etl-patterns-for-sensor-data)
+- [Chapter 13: Production-Ready Algorithm Development](#chapter-13-production-ready-algorithm-development)
+  - [13.1 Code Quality Standards](#131-code-quality-standards)
+  - [13.2 Testing Strategies](#132-testing-strategies)
+  - [13.3 Version Control Practices](#133-version-control-practices)
+- [Chapter 14: MLOps Fundamentals](#chapter-14-mlops-fundamentals)
+  - [14.1 Experiment Tracking](#141-experiment-tracking)
+  - [14.2 Model Versioning and Registry](#142-model-versioning-and-registry)
+  - [14.3 CI/CD for ML Pipelines](#143-cicd-for-ml-pipelines)
+  - [14.4 Model Monitoring](#144-model-monitoring)
+- [Chapter 15: Deployment Patterns](#chapter-15-deployment-patterns)
+  - [15.1 Batch vs. Real-Time Inference](#151-batch-vs-real-time-inference)
+  - [15.2 Edge Deployment Considerations](#152-edge-deployment-considerations)
+  - [15.3 A/B Testing and Gradual Rollout](#153-ab-testing-and-gradual-rollout)
+
 ---
 
 ## Chapter 12: Data Pipelines for IoT/Energy Systems

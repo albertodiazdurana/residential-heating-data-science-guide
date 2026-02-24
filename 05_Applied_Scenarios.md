@@ -1,5 +1,21 @@
 # Part V: Applied Scenarios
 
+## Table of Contents
+
+- [Chapter 18: Case Study Walkthroughs](#chapter-18-case-study-walkthroughs)
+  - [18.1 District Heating Optimization: WSL Leipzig](#181-district-heating-optimization-wsl-leipzig)
+  - [18.2 Heat Pump Cascade: GWU Eckernförde](#182-heat-pump-cascade-gwu-eckernförde)
+  - [18.3 Gas Boiler Cascade: DIE EHRENFELDER](#183-gas-boiler-cascade-die-ehrenfelder)
+- [Chapter 19: System Design Questions](#chapter-19-system-design-questions)
+  - [19.1 Design: Energy Management Platform for 3,000 Buildings](#191-design-energy-management-platform-for-3000-buildings)
+  - [19.2 Design: Real-Time Anomaly Detection Pipeline](#192-design-real-time-anomaly-detection-pipeline)
+  - [19.3 Design: Multi-Tenant Data Architecture](#193-design-multi-tenant-data-architecture)
+- [Chapter 20: Behavioral & Cross-Functional Collaboration](#chapter-20-behavioral--cross-functional-collaboration)
+  - [20.1 Working with Energy Engineers](#201-working-with-energy-engineers)
+  - [20.2 Translating Customer Requirements](#202-translating-customer-requirements)
+  - [20.3 Communicating ML Results](#203-communicating-ml-results)
+  - [20.4 Sample Behavioral Questions and Responses](#204-sample-behavioral-questions-and-responses)
+
 ---
 
 ## Chapter 18: Case Study Walkthroughs

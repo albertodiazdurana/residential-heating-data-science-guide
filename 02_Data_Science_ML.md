@@ -1,5 +1,35 @@
 # Part II: Data Science & Machine Learning for Energy Systems
 
+## Table of Contents
+
+- [Chapter 6: Time Series Fundamentals for Energy Data](#chapter-6-time-series-fundamentals-for-energy-data)
+  - [6.1 Characteristics of Energy Time Series](#61-characteristics-of-energy-time-series)
+  - [6.2 Resampling and Interpolation](#62-resampling-and-interpolation)
+  - [6.3 Feature Engineering for Energy Time Series](#63-feature-engineering-for-energy-time-series)
+- [Chapter 7: Forecasting Heat Demand & Energy Production](#chapter-7-forecasting-heat-demand--energy-production)
+  - [7.1 Classical Time Series Methods](#71-classical-time-series-methods)
+  - [7.2 Machine Learning Approaches](#72-machine-learning-approaches)
+  - [7.3 Deep Learning for Sequence Modeling](#73-deep-learning-for-sequence-modeling)
+  - [7.4 Weather Data Integration](#74-weather-data-integration)
+- [Chapter 8: Anomaly Detection in Heating Systems](#chapter-8-anomaly-detection-in-heating-systems)
+  - [8.1 Statistical Methods](#81-statistical-methods)
+  - [8.2 Machine Learning Methods](#82-machine-learning-methods)
+  - [8.3 Domain-Specific Anomaly Types](#83-domain-specific-anomaly-types)
+- [Chapter 9: Control & Optimization Algorithms](#chapter-9-control--optimization-algorithms)
+  - [9.1 Rule-Based Control](#91-rule-based-control)
+  - [9.2 Model Predictive Control (MPC)](#92-model-predictive-control-mpc)
+  - [9.3 Reinforcement Learning for HVAC](#93-reinforcement-learning-for-hvac)
+  - [9.4 Multi-Objective Optimization](#94-multi-objective-optimization)
+  - [9.5 Peak Shaving and Load Shifting](#95-peak-shaving-and-load-shifting)
+- [Chapter 10: Supervised Learning Applications](#chapter-10-supervised-learning-applications)
+  - [10.1 Regression: Energy Consumption Prediction](#101-regression-energy-consumption-prediction)
+  - [10.2 Classification: Fault Detection](#102-classification-fault-detection)
+  - [10.3 Feature Importance and Interpretability](#103-feature-importance-and-interpretability)
+- [Chapter 11: Unsupervised Learning Applications](#chapter-11-unsupervised-learning-applications)
+  - [11.1 Clustering Building Portfolios](#111-clustering-building-portfolios)
+  - [11.2 Dimensionality Reduction](#112-dimensionality-reduction)
+  - [11.3 Identifying Operational Regimes](#113-identifying-operational-regimes)
+
 ---
 
 ## Chapter 6: Time Series Fundamentals for Energy Data

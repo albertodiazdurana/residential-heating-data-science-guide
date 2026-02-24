@@ -1,5 +1,16 @@
 # Part IV: Technical Stack Deep Dive
 
+## Table of Contents
+
+- [Chapter 16: Python for Energy Data Science](#chapter-16-python-for-energy-data-science)
+  - [16.1 Pandas: Time-Indexed DataFrames](#161-pandas-time-indexed-dataframes)
+  - [16.2 NumPy and SciPy for Numerical Computing](#162-numpy-and-scipy-for-numerical-computing)
+  - [16.3 Scikit-learn: Pipelines and Model Selection](#163-scikit-learn-pipelines-and-model-selection)
+- [Chapter 17: Data Access Patterns](#chapter-17-data-access-patterns)
+  - [17.1 SQL for Time Series Analysis](#171-sql-for-time-series-analysis)
+  - [17.2 GraphQL for Hierarchical Building Data](#172-graphql-for-hierarchical-building-data)
+  - [17.3 REST API Design](#173-rest-api-design)
+
 ---
 
 ## Chapter 16: Python for Energy Data Science
