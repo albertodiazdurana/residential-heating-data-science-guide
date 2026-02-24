@@ -560,7 +560,7 @@ This chapter prepares you for system design situations with architecture questio
 
 ### 19.1 Design: Energy Management Platform for 3,000 Buildings
 
-**Prompt:** "Design a cloud platform to monitor and optimize heating systems across 3,000 multi-family buildings. The system should ingest sensor data, run optimization algorithms, and push control setpoints to building controllers."
+**Task:** "Design a cloud platform to monitor and optimize heating systems across 3,000 multi-family buildings. The system should ingest sensor data, run optimization algorithms, and push control setpoints to building controllers."
 
 **Clarifying Questions to Ask:**
 - What's the sensor data volume? (Assume: 20 sensors/building, 15-min intervals = 2.88M readings/day)
@@ -681,7 +681,7 @@ Time-series data is partitioned by building_id (hash partition) and time (range 
 
 ### 19.2 Design: Real-Time Anomaly Detection Pipeline
 
-**Prompt:** "Design a system that detects anomalies in heating system sensor data in real-time and alerts operators within 5 minutes of occurrence."
+**Task:** "Design a system that detects anomalies in heating system sensor data in real-time and alerts operators within 5 minutes of occurrence."
 
 **Architecture:**
 
@@ -829,7 +829,7 @@ class AlertAggregator:
 
 ### 19.3 Design: Multi-Tenant Data Architecture
 
-**Prompt:** "Design the data architecture to support 100+ housing companies, each managing 10-1000 buildings, with strict data isolation requirements."
+**Task:** "Design the data architecture to support 100+ housing companies, each managing 10-1000 buildings, with strict data isolation requirements."
 
 **Tenant Isolation Strategy:**
 
