@@ -1,25 +1,24 @@
-# Checkpoint: Session 5 (Light)
+# Checkpoint: Session 5 (Light -- Final)
 
 **Date:** 2026-03-21
 **Session:** 5
-**Type:** Lightweight wrap-up
-**Branch:** session-5/readme-brand-alignment
-**Commit:** 76bc19a
+**Type:** Lightweight wrap-up (final)
+**Branch:** main
+**Commit:** 341714e (merge commit from PR #1)
 
 ---
 
-## What Was Done
+## What Was Done (Full Session 5)
 
 - Processed inbox entry `2026-03-21_readme-brand-alignment.md` (BL-249)
 - README updated: Take AI Bite branding, ecosystem table, author links, date
 - Inbox entry moved to `_inbox/done/`
-- PR #1 created (main is protected, requires PR merge)
-- Consumed stale Session 2 checkpoint (moved to done/)
-- DSM version noted: v1.3.69 (up from v1.3.52, 17-version jump)
+- PR #1 created, merged to main, feature branch deleted
+- Consumed stale Session 2 checkpoint
+- DSM version noted: v1.3.69 (up from v1.3.52)
 
 ## What Remains
 
-- PR #1 needs review and merge to main
 - Remote URL still points to old repo name (redirect works but not canonical)
 - Governance gaps: `docs/` should migrate to `dsm-docs/`, missing `.claude/dsm-ecosystem.md`
 
