@@ -2,7 +2,7 @@
 
 A domain knowledge framework bridging energy engineering fundamentals with data science and machine learning for building energy optimization. Developed as part of ongoing research toward a methodological contribution: *A Framework for ML Deployment in Building Energy Management Systems*.
 
-**Focus:** Systematic documentation of German heating standards (DIN, VDI, GEG) with applied ML methodologies for residential heating system optimization. Structured using the [Agentic AI Data Science Methodology (DSM)](https://github.com/albertodiazdurana/agentic-ai-data-science-methodology) for human-AI collaborative development.
+**Focus:** Systematic documentation of German heating standards (DIN, VDI, GEG) with applied ML methodologies for residential heating system optimization. Structured using [Take AI Bite](https://github.com/albertodiazdurana/take-ai-bite), a framework for human-AI collaboration powered by the Deliberate Systematic Methodology (DSM).
 
 ---
 
@@ -145,7 +145,7 @@ This project is part of a three-repository system:
 |------------|------|---------|
 | **[Residential Heating DS Guide](https://github.com/albertodiazdurana/residential-heating-data-science-guide)** (this repo) | Framework & Theory | Domain knowledge, methodology, German standards documentation |
 | **[Residential Energy Apps](https://github.com/albertodiazdurana/dsm-residential-energy)** ([Live App](https://data-science-residential-energy-systems-heating-curve.streamlit.app/)) | Implementation | Heating curve simulator, interactive Streamlit applications |
-| **[Agentic AI DS Methodology (DSM)](https://github.com/albertodiazdurana/agentic-ai-data-science-methodology)** | Meta-Methodology | Structured human-AI collaboration framework for DS projects |
+| **[Take AI Bite (DSM)](https://github.com/albertodiazdurana/take-ai-bite)** | Meta-Methodology | Human-AI collaboration framework powered by the Deliberate Systematic Methodology |
 
 **Integration:** Theory (this repo) is validated by Practice (code repo), executed using the Meta-methodology (DSM).
 
@@ -175,6 +175,7 @@ Freelance Data Scientist & ML Engineer | 10+ Years Experience
 - Specialization in building energy systems, thermo-economic modeling, and applied ML for energy optimization
 - Production ML experience across energy, cement manufacturing, and process mining domains
 - [GitHub](https://github.com/albertodiazdurana) | [LinkedIn](https://www.linkedin.com/in/albertodiazdurana/)
+- [Website](https://takeaibite.de) | [Blog](https://blog.take-ai-bite.com)
 
 ---
 
@@ -201,4 +202,4 @@ Under the following terms:
 ---
 
 **Status:** Active development
-**Last Updated:** February 2026
+**Last Updated:** March 2026

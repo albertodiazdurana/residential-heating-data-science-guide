@@ -1,3 +1,5 @@
+**Consumed at:** Session 5 start (2026-03-21)
+
 # Checkpoint: Pre-Formatting Edits
 
 **Date:** 2026-02-23
